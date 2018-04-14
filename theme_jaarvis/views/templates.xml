@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+
+        <!-- for changing css of logo website !-->
+        <template id="assets_frontend" name="website jaarvis assets" inherit_id="web.assets_frontend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/theme_jaarvis/static/src/css/jaarvis.css"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

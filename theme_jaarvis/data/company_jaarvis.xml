@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+
+           <!--<record id="jaarvis_company" model="res.company">-->
+               <!--<field name="name">Jaarvis</field>-->
+               <!--<field name="external_report_layout">standard</field>-->
+               <!--<field name="logo" type="base64" file="theme_jaarvis/static/src/img/logo_jaarvis.png"/>-->
+               <!--<field name="website">www.Jaarvistech.com</field>-->
+               <!--<field name="partner_id"  ref="base.main_partner"></field>-->
+               <!--<field name="timesheet_mail_employee_interval">weeks</field>-->
+           <!--</record>-->
+           <!--&lt;!&ndash;</record>&ndash;&gt;-->
+        <!--<record id="base.main_partner" model="res.partner">-->
+            <!--<field name="name">Jaarvis</field>-->
+            <!--<field name="company_name">Jaarvis</field>-->
+            <!--<field name="street">Phase B-2</field>-->
+            <!--<field name="city">Mohali</field>-->
+            <!--<field name="zip">18545</field>-->
+            <!--<field name='country_id' ref='base.in'/>-->
+            <!--<field name='state_id' ref='state_us_39'/>-->
+            <!--<field name="phone">+1 555 123 8069</field>-->
+            <!--<field name="email">jaarvistech@jaarvis.com</field>-->
+            <!--<field name="website">www.jaarvistech.com</field>-->
+            <!--<field name="image" type="base64" file="theme_jaarvis/static/src/img/logo_jaarvis.png"/>-->
+        <!--</record>-->
+
+
+    </data>
+</odoo>
