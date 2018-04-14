@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template_for_change_company_logo_everywhere">
 
+    <!-- change company logo on front screen -->
     <t t-extend="AppSwitcher.Content">
       <t t-jquery="div.o_application_switcher_footer" t-operation="replace">
         <div class="o_application_switcher_footer">

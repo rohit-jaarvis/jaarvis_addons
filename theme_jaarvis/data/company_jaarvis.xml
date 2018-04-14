@@ -1,29 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
 
-           <!--<record id="jaarvis_company" model="res.company">-->
-               <!--<field name="name">Jaarvis</field>-->
-               <!--<field name="external_report_layout">standard</field>-->
-               <!--<field name="logo" type="base64" file="theme_jaarvis/static/src/img/logo_jaarvis.png"/>-->
-               <!--<field name="website">www.Jaarvistech.com</field>-->
-               <!--<field name="partner_id"  ref="base.main_partner"></field>-->
-               <!--<field name="timesheet_mail_employee_interval">weeks</field>-->
-           <!--</record>-->
-           <!--&lt;!&ndash;</record>&ndash;&gt;-->
-        <!--<record id="base.main_partner" model="res.partner">-->
-            <!--<field name="name">Jaarvis</field>-->
-            <!--<field name="company_name">Jaarvis</field>-->
-            <!--<field name="street">Phase B-2</field>-->
-            <!--<field name="city">Mohali</field>-->
-            <!--<field name="zip">18545</field>-->
-            <!--<field name='country_id' ref='base.in'/>-->
-            <!--<field name='state_id' ref='state_us_39'/>-->
-            <!--<field name="phone">+1 555 123 8069</field>-->
-            <!--<field name="email">jaarvistech@jaarvis.com</field>-->
-            <!--<field name="website">www.jaarvistech.com</field>-->
-            <!--<field name="image" type="base64" file="theme_jaarvis/static/src/img/logo_jaarvis.png"/>-->
-        <!--</record>-->
+        <!--this file will update main company data to the jaarvis data -->
+        <!--why !!-->
+        <!--The <odoo> element can have a noupdate attribute, which is propagated to the-->
+<!--ir.model.data records created when reading the enclosed data records for the first time,-->
+<!--ending up as a column in this table.-->
+<!--When Odoo installs an addon (called init mode), all noupdate records are written. When-->
+<!--you update an addon (called update mode), the existing XML IDs are checked to see-->
+<!--whether they have the noupdate flag set, and if so, elements trying to write to this XML ID-->
+<!--are ignored. This is not the case if the record in question was deleted by the user, which is-->
+<!--why you can force not recreating noupdate records also in update mode by setting the flag-->
+<!--forcecreate on the record to false -->
 
-
+<!--You can force init mode by starting your Odoo server with the &#45;&#45;init=your_addon-->
+<!--parameter, overwriting all the existing noupdate records. This will also cause deleted-->
+<!--records to be recreated. Note that this can cause double records and related installation-->
+<!--errors if a module circumvents the XML ID mechanism, for example, by creating records in-->
+<!--Python code called by YAML files.-->
+        <!--base_main company have noupdate=1 so in this modeule difference will appeare in th-->
+        <record id="base.main_company" model="res.company">
+                <field name="name">Jaarvis</field>
+                <field name="website">http://www.Jaarvistech.com</field>
+                <field name="email">Jaarvis@jaarvis.com</field>
+                <field name="website">http://www.Jaarvistech.com</field>
+                <field name="currency_id" ref="base.INR"/>
+                <field name="street">Phase 3B-2 Mohali</field>
+                <field name="social_twitter">https://twitter.com/Jaarvis</field>
+                <field name="social_facebook">https://www.facebook.com/Jaarvis</field>
+                <field name="social_googleplus">https://plus.google.com/Jaarvis</field>
+                <field name="social_linkedin">https://www.linkedin.com/company/Jaarvis</field>
+                <field name="logo" type="base64" file="theme_jaarvis/static/src/img/logo_jaarvis.png"/>
+        </record>
     </data>
 </odoo>
