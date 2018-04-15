@@ -26,7 +26,7 @@
                 <field name="website">http://www.Jaarvistech.com</field>
                 <field name="email">Jaarvis@jaarvis.com</field>
                 <field name="website">http://www.Jaarvistech.com</field>
-                <field name="currency_id" ref="base.INR"/>
+                <!--<field name="currency_id" ref="base.INR"/>-->
                 <field name="street">Phase 3B-2 Mohali</field>
                 <field name="social_twitter">https://twitter.com/Jaarvis</field>
                 <field name="social_facebook">https://www.facebook.com/Jaarvis</field>
