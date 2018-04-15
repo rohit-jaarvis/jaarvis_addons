@@ -10,6 +10,7 @@
 
     'author': "Rohit Kumar",
     'website': "http://www.jaarvistech.com",
+    "images" : ["theme_jaarvis/static/src/img/logo_jaarvis.png"],
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml

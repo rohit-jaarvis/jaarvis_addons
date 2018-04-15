@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <!--if u are updating this module &#45;&#45;init=theme_jaarvis-->
 
         <!--this file will update main company data to the jaarvis data -->
         <!--why !!-->
