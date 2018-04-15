@@ -8,7 +8,7 @@
         Theme jaarvis
     """,
 
-    'author': "Rohit Kumarr",
+    'author': "Rohit Kumarrr",
     'website': "http://www.jaarvistech.com",
     "images" : ["theme_jaarvis/static/src/img/logo_jaarvis.png"],
 
