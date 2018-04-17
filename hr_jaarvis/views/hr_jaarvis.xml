@@ -1,0 +1,39 @@
+<odoo>
+
+    <record id="hr_employee_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.view.form.inherit.jaarvis</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='address_home_id']" position="before">
+                    <field name="current_address"/>
+            </xpath>
+            <xpath expr="//field[@name='current_address']" position="before">
+                    <field name="permanent_address"/>
+            </xpath>
+            <xpath expr="//field[@name='country_id']" position="before">
+                    <field name="father_name"/>
+            </xpath>
+            <xpath expr="//field[@name='emergency_contact']" position="after">
+                    <field name="emergency_contact_name"/>
+            </xpath>
+            <xpath expr="//field[@name='identification_id']" position="before">
+                    <field name="universal_account_number"/>
+            </xpath>
+            <xpath expr="//field[@name='universal_account_number']" position="before">
+                    <field name="pan_id"/>
+            </xpath>
+            <xpath expr="//field[@name='pan_id']" position="before">
+                    <field name="aadhar_id"/>
+            </xpath>
+
+
+
+
+
+
+        </field>
+    </record>
+
+</odoo>
