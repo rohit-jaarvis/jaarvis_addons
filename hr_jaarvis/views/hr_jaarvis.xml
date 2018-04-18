@@ -24,9 +24,39 @@
             <xpath expr="//field[@name='universal_account_number']" position="before">
                     <field name="pan_id"/>
             </xpath>
+            <xpath expr="//field[@name='universal_account_number']" position="after">
+                    <field name="nominee_pf"/>
+            </xpath>
             <xpath expr="//field[@name='pan_id']" position="before">
                     <field name="aadhar_id"/>
             </xpath>
+            <xpath expr="//page[@name='personal_information']//group[6]" position="after">
+                <group string="Intership Info" name="internship_info">
+                    <field name="internship_confirmation_date"/>
+                </group>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']//group[5]" position="after">
+                <group string="Probation Period" name="probation_info">
+                    <field name="probation_completion_date"/>
+                </group>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page string="Details of last organization" name="details_of_last_organization">
+                    <group string="Probation Period" name="probation_info">
+                        <field name="previous_company_name"/>
+                        <field name="previous_company_hr_name"/>
+                        <field name="previous_company_hr_contact"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//page[@name='public']//group[2]" position="after">
+                <group string="Work Experience" name="work_experience">
+                        <field name="experience_total_years"/>
+                        <field name="experience_months"/>
+                </group>
+            </xpath>
+
+
 
 
 
