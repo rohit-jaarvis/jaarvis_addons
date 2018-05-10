@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "hr_holidays_jaarvis",
+    'name': "hr_attendance_jaarvis",
 
     'summary': """
-        this module will coontrol the information regarding jaarvis leaves""",
+        Short (1 phrase/line) summary of the module's purpose, used as
+        subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Add some leave types according to jaarvis needs
+        Long description of module's purpose
     """,
 
-    'author': "RohitK",
-    'website': "http://www.jaarvistech.com",
+    'author': "My Company",
+    'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
@@ -19,13 +20,15 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr','hr_holidays'],
+    'depends': ['base','hr','hr_attendance'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'data/hr_holidays_jaarvis_data.xml',
         'views/views.xml',
+        'views/hr_employee.xml',
+        'views/cron_import_employee_att.xml'
     ],
+    # only loaded in demonstration mode
 
 }

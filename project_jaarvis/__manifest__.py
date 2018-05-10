@@ -23,9 +23,14 @@
 
     # always loaded
     'data': [
+        # 'security/ir.model.access.csv',
+
         'views/templates.xml',
         'data/company_jaarvis.xml',
     ],
-
+    # only loaded in demonstration mode
+    'demo': [
+        'demo/demo.xml',
+    ],
     'qweb': ['static/src/xml/*.xml' ],
 }
