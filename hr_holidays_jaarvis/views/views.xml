@@ -1,0 +1,22 @@
+<odoo>
+
+
+    <record id="project.view_task_project_user_gantt" model="ir.ui.view">
+            <field name="name">report.project.task.user.gantt</field>
+            <field name="model">report.project.task.user</field>
+            <field name="arch" type="xml">
+                <gantt
+                        date_stop="date_start"
+                        date_start="date_deadline"
+                        string="Hours"
+                        consolidation="total_hours"/>
+
+            </field>
+    </record>
+    <record id="project.action_project_task_user_tree" model="ir.actions.act_window">
+            <field name="view_mode">graph,pivot,gantt</field>
+            <field name="gantt_view_id" ref="project.view_task_project_user_gantt"/>
+    </record>
+
+
+</odoo>

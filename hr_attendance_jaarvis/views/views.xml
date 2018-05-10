@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+    <record id="import_employee_data_from_essl_epushserver" model="ir.ui.view">
+        <field name="name">Wizard Import Employee Data</field>
+        <field name="model">wizard.import.employee.data</field>
+        <field name="arch" type="xml">
+            <form string="Import Employee from Biometric mechine">
+                <footer>
+                    <button name="import_employee_data"
+                        string="Import Employee" type="object"
+                        class="btn-primary"/>
+                    <button string="Cancel"
+                        class="btn-default"
+                        special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_import_employee_data_from_essl_epushserver">
+      <field name="name">Action Wizard Import Employee Data</field>
+      <field name="res_model">wizard.import.employee.data</field>
+      <field name="view_mode">form</field>
+      <field name="view_type">form</field>
+      <field name="view_id" ref="import_employee_data_from_essl_epushserver"/>
+    </record>
+
+
+
+     <menuitem name="Import Employee"
+               id="hr_attendance_jaarvis_import_employee"
+               parent="hr.menu_hr_root"
+     />
+
+     <menuitem name="Import Employee From Biometric"
+               id="hr_attendance_jaarvis_import_employee_from_biometric"
+               parent="hr_attendance_jaarvis_import_employee"
+               action="action_import_employee_data_from_essl_epushserver"
+     />
+
+
+  </data>
+</odoo>
