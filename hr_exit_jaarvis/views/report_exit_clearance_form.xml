@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <!--creates an format of the exit clearence form-->
+        <template id="report_hr_exit_clearence_form_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="doc" />
+                <div class="page">
+                    <div class="row">
+                        <div name="exit_form" class="">
+                            <!--<address t-field="o.partner_id"-->
+                                <!--t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />-->
+                            <!--<div t-if="o.partner_id.vat" class="mt16"><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="o.partner_id.vat"/></div>-->
+                                <h2 class="text-center">
+                                    <span>Exit Clearance Form</span>
+                                </h2>
+                                <h4 class="text-center">
+                                    <span>Employee/Trainee</span>
+                                </h4>
+                            <h2></h2>
+
+                            <table class="table table-bordered">
+                                  <tr>
+                                    <td>Employee Code</td>
+                                    <td><t t-esc="o.employee_id.id"/></td>
+                                      <td>Employee Name</td>
+                                      <td><t t-esc="o.employee_id.name"/></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Company</td>
+                                      <td><t t-esc="o.employee_id.company_id.name"/></td>
+                                    <td>Designation</td>
+                                      <td><t t-esc="o.employee_id.job_id.name"/></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Location</td>
+                                      <td><t t-esc="o.employee_id.work_location"/></td>
+                                    <td>Team</td>
+                                      <td>Odoo</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Date Of Joining</td>
+                                      <td><t t-esc="o.employee_id.birthday"/></td>
+                                    <td>Resignation Date</td>
+                                      <td><t t-esc="o.request_date"/></td>
+                                  </tr>
+                            </table>
+                            <p>
+                                Persons in-charge are required to sign-off in the respective sections mentioned below.
+                                <br/>Clearance by HR Advising team and Reporting Manager should be signed after rest of the clearances.
+                            </p>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                      <th style="width: 8%" scope="col">S.No</th>
+                                      <th scope="col">IT Clearence</th>
+                                      <th scope="col">Status</th>
+                                      <th style="width: 8%" scope="col">S.No</th>
+                                      <th scope="col">Administration Clearence</th>
+                                      <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     <tr>
+                                      <th scope="row">1.</th>
+                                      <td>Deletion/ Retention of E-Mail ID</td>
+                                      <td><t t-esc="o.is_delete_email_id"/></td>
+                                      <th scope="row">1.</th>
+                                      <td>Desk, Cabinet keys returned</td>
+                                      <td><t t-esc="o.is_delete_email_id"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">2.</th>
+                                      <td>Laptop Returned</td>
+                                      <td><t t-esc="o.is_laptop_returned"/></td>
+                                      <th scope="row">2.</th>
+                                      <td>Id car handover Visiting</td>
+                                      <td><t t-esc="o.is_id_card_handover"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">3.</th>
+                                      <td>System Login Ids Deactivated</td>
+                                      <td><t t-esc="o.is_system_login_ids_deactivated"/></td>
+                                      <th scope="row">3.</th>
+                                      <td>Card Retuned Company</td>
+                                      <td><t t-esc="o.is_card_returned_company"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">4.</th>
+                                      <td>Skype Id Deactivated</td>
+                                      <td><t t-esc="o.is_skypr_id_deactivated"/></td>
+                                      <th scope="row">4.</th>
+                                      <td>Own Sim Card Liabrary</td>
+                                      <td><t t-esc="o.is_owned_sim_card_liabrary"/></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">5.</th>
+                                      <td>Any other Remarks or IT Assets</td>
+                                      <td><t t-esc="o.any_other_review_and_it_assets"/></td>
+                                      <th scope="row">5.</th>
+                                      <td>Book HandOver</td>
+                                      <td><t t-esc="o.is_book_handover"/></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"></th>
+                                      <td></td>
+                                      <td></td>
+                                      <th scope="row">6.</th>
+                                      <td>Any Other Remarks</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr >
+                                        <td rowspan="2">Remarks</td>
+                                        <td colspan="2" rowspan="2"><t t-esc="o.it_clearence_remarks"/></td>
+                                        <td rowspan="2">Remarks</td>
+                                        <td colspan="2" rowspan="2"><t t-esc="o.admin_clearence_remarks"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-bordered">
+
+                                <tr>
+                                        <td>Name</td>
+                                        <td>Signature</td>
+                                        <td>Name</td>
+                                        <td>Signature</td>
+                                </tr>
+                                <tr>
+                                    <td>Tech Lead</td><td>Tesh Lead Sign</td>
+                                    <td>Admin</td><td>Admin Sign</td>
+                                </tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                      <th style="width: 7%" scope="col">S.No</th>
+                                      <th scope="col">Finance Clearance</th>
+                                      <th scope="col">Status</th>
+                                      <th style="width: 7%" scope="col">S.No</th>
+                                      <th scope="col">Reporting Manager Clearence</th>
+                                      <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     <tr>
+                                      <th scope="row">1.</th>
+                                      <td>Salary Advance Recovery</td>
+                                      <td><t t-esc="o.is_salary_advance_recovery"/></td>
+                                      <th scope="row">1.</th>
+                                      <td>HandOver Given And Report Submitted</td>
+                                      <td><t t-esc="o.is_handover_given_and_report_submitted"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">2.</th>
+                                      <td>Any Imprest Amount Pending</td>
+                                      <td><t t-esc="o.is_any_imprest_amount_pending"/></td>
+                                      <th scope="row">2.</th>
+                                      <td>Working Responsibilities Compleated</td>
+                                      <td><t t-esc="o.is_woking_responsibilities_compleated"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">3.</th>
+                                      <td>incentive Variable To be Paid</td>
+                                      <td><t t-esc="o.is_incentive_variable_to_be_paid"/></td>
+                                      <th scope="row">3.</th>
+                                      <td>Email Id Retained)</td>
+                                      <td><t t-esc="o.is_email_id_retained"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">4.</th>
+                                      <td>All Financial Authority Revoked</td>
+                                      <td><t t-esc="o.is_all_financial_authority_revoked"/></td>
+                                      <th scope="row">4.</th>
+                                      <td>Company Documents Manual Returned</td>
+                                      <td><t t-esc="o.is_company_document_manuals_returned"/></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">5.</th>
+                                      <td>Traning Cost To Be Recovered</td>
+                                      <td><t t-esc="o.is_traning_cost_recovered"/></td>
+                                      <th scope="row">5.</th>
+                                      <td>Company Documents Manual Returned</td>
+                                      <td><t t-esc="o.is_company_document_manuals_returned"/></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">6.</th>
+                                      <td>Any Other</td>
+                                      <td></td>
+                                      <th scope="row">6.</th>
+                                      <td>Any Other</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr >
+                                        <td rowspan="2">Remarks</td>
+                                        <td colspan="2" rowspan="2"><t t-esc="o.finance_clearence_remarks"/></td>
+                                        <td rowspan="2">Remarks</td>
+                                        <td colspan="2" rowspan="2"><t t-esc="o.reporting_manager_clearence_remarks"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-bordered">
+
+                                <tr>
+                                        <td>Name</td>
+                                        <td>Signature</td>
+                                        <td>Name</td>
+                                        <td>Signature</td>
+                                </tr>
+
+                            </table>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                      <th style="width: 7%" scope="col">S.No</th>
+                                      <th scope="col">Hr Clearance</th>
+                                      <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     <tr>
+                                      <th scope="row">1.</th>
+                                      <td>Notice Period Shortfall</td>
+                                      <td><t t-esc="o.is_notice_period_shortfall"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">2.</th>
+                                      <td>Exit Interview conducted</td>
+                                      <td><t t-esc="o.is_exit_interview_conducted"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">3.</th>
+                                      <td>OHRM Login Disabled</td>
+                                      <td><t t-esc="o.is_ohrm_login_disabled"/></td>
+                                    </tr>
+                                     <tr>
+                                      <th scope="row">4.</th>
+                                      <td>Insaurance Cancelation</td>
+                                      <td><t t-esc="o.is_insaurence_cancelation"/></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">5.</th>
+                                      <td>Any Other</td>
+                                      <td><t t-esc="o.is_any_other"/></td>
+                                    </tr>
+                                    <tr >
+                                        <td rowspan="2">Remarks</td>
+                                        <td colspan="2" rowspan="2"><t t-esc="o.finance_clearence_remarks"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+
+                    <h4 class="text-center">
+                                <span>To be filled by <br/>Employee/Trainee</span>
+                    </h4>
+                    <p>
+                        Since I have resigned from the services of the Company:<br/>
+1. I would like to withdraw / transfer Provident Fund Contribution amount ___________.<br/>
+2. Regarding my Final Settlement payments:<br/>
+ &#160;&#160;a. I agree that in the event of non-submission of Investment proofs, income tax will be deducted in the full &amp;<br/>
+ &#160;&#160;   final settlement as per Income tax rules.<br/>
+&#160;&#160;    b. Company may deposit the cheque in my bank and details of which are as below:<br/>
+ &#160;&#160;   A/c No.:________________________  Bank &amp;brench _____________________<br/>
+ &#160;&#160;   Branch Address:__________________________________________<br/>
+
+
+ &#160;&#160;   c. Company may courier the cheque at the address mentioned below.<br/>
+
+&#160;&#160;    My Contact details after I leave the Company:<br/>
+&#160;&#160;    Tel./Mobile No:________________________                Email Id:___________________<br/>
+
+&#160;&#160;    Contact Address: ___________________________________________________<br/>
+
+I hereby confirm the above information is correct and have read the information in this form.<br/>
+
+Employee Signature:_________________________                  Date:_____________________
+                    </p>
+
+                </div>
+
+            </t>
+        </template>
+
+
+        <template id="report_hr_exit_clearence_form">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="hr_exit_jaarvis.report_hr_exit_clearence_form_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="hr_exit_clearence_form_report_tag"
+            model="hr_exit_jaarvis.hr_exit"
+            string="Exit Clearence form"
+            report_type="qweb-html"
+            name="hr_exit_jaarvis.report_hr_exit_clearence_form"
+            file="hr_exit_jaarvis.report_hr_exit_clearence_form"
+            attachment="('ExitForm'+(str(object.id) or '').replace('/','')+'.pdf')"
+            print_report_name="(object._get_printed_report_name())"
+        />
+
+    </data>
+</odoo>

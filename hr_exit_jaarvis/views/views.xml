@@ -1,0 +1,141 @@
+<odoo>
+  <data>
+      <!--action for employee to the hr exit request-->
+    <record model="ir.actions.act_window" id="action_employee_to_exit_requests">
+          <field name="name">Exit Requests</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="src_model">hr.employee</field>
+          <field name="res_model">hr_exit_jaarvis.hr_exit</field>
+          <field name="view_mode">tree,form</field>
+          <field name="view_type">form</field>
+          <field name="context">{'search_default_employee_id': [active_id], 'default_employee_id': active_id}</field>
+    </record>
+
+
+    <record id="view_employee_form_leave_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.leave.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='toggle_active']" position="before">
+                <button name="%(action_employee_to_exit_requests)d" type="action" class="oe_stat_button"
+                        icon="fa-book" groups="base.group_user" help="Exit Request"
+                >
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Exit Request</span>
+                        </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_exit_requests_form" model="ir.ui.view">
+            <field name="name">hr.exit.requests.tree</field>
+            <field name="model">hr_exit_jaarvis.hr_exit</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="name"/>
+                            <field name="request_date"/>
+                        </group>
+                        <notebook>
+
+                            <page name="IT_clearence" string="IT clearence">
+                                    <group>
+                                        <field name="is_delete_email_id"/>
+                                        <field name="is_laptop_returned"/>
+                                        <field name="is_system_login_ids_deactivated"/>
+                                        <field name="is_skypr_id_deactivated"/>
+                                        <field name="any_other_review_and_it_assets"/>
+                                        <field name="it_clearence_remarks"/>
+                                    </group>
+                            </page>
+
+                            <page name="administration_clearance" string="Administration Clearance">
+                                    <group>
+                                        <field name="is_desk_cabin_key_returned"/>
+                                        <field name="is_id_card_handover"/>
+                                        <field name="is_card_returned_company"/>
+                                        <field name="is_owned_sim_card_liabrary"/>
+                                        <field name="is_book_handover"/>
+                                        <field name="admin_clearence_remarks"/>
+                                    </group>
+                            </page>
+
+                            <page name="finance_clearance" string="Finance Clearance">
+                                    <group>
+                                        <field name="is_salary_advance_recovery"/>
+                                        <field name="is_any_imprest_amount_pending"/>
+                                        <field name="is_incentive_variable_to_be_paid"/>
+                                        <field name="is_all_financial_authority_revoked"/>
+                                        <field name="is_traning_cost_recovered"/>
+                                        <field name="finance_clearence_remarks"/>
+                                    </group>
+                            </page>
+
+                            <page name="reporting_manager_clearence" string="Reporting Manager Clearence">
+                                    <group>
+                                        <field name="is_handover_given_and_report_submitted"/>
+                                        <field name="is_woking_responsibilities_compleated"/>
+                                        <field name="is_email_id_retained"/>
+                                        <field name="is_company_document_manuals_returned"/>
+                                        <field name="reporting_manager_clearence_remarks"/>
+                                    </group>
+                            </page>
+
+                            <page name="hr_clearence" string="Hr Clearence">
+                                    <group>
+                                        <field name="is_notice_period_shortfall"/>
+                                        <field name="is_exit_interview_conducted"/>
+                                        <field name="is_ohrm_login_disabled"/>
+                                        <field name="is_insaurence_cancelation"/>
+                                        <field name="is_any_other"/>
+                                        <field name="hr_clearance_remark"/>
+                                    </group>
+                            </page>
+
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+
+     <record id="view_exit_requests_tree" model="ir.ui.view">
+            <field name="name">hr.exit.requests.tree</field>
+            <field name="model">hr_exit_jaarvis.hr_exit</field>
+            <field name="arch" type="xml">
+                <tree>
+                        <field name="employee_id"/>
+                        <field name="name"/>
+                        <field name="request_date"/>
+                </tree>
+            </field>
+    </record>
+
+      <!--Action for exit requests-->
+
+    <record model="ir.actions.act_window" id="action_hr_exit_jaarvis_exit_requests">
+      <field name="name">Exit Requests</field>
+      <field name="res_model">hr_exit_jaarvis.hr_exit</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+    </record>
+
+      <!--'defining menu employee&#45;&#45;&ndash;&gt;employee Exit -&#45;&#45;&ndash;&gt; Exit requests'-->
+    <menuitem name="Employee Exit"
+               id="menu_hr_exit_jaarvis_employee_exit"
+               parent="hr.menu_hr_root"
+     />
+
+     <menuitem name="Exit Requests"
+               id="menu_hr_exit_jaarvis_exit_requests"
+               parent="menu_hr_exit_jaarvis_employee_exit"
+               action="action_hr_exit_jaarvis_exit_requests"
+     />
+
+  </data>
+</odoo>

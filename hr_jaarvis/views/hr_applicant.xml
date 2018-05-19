@@ -1,0 +1,19 @@
+<odoo>
+    <record id="crm_case_form_view_job" model="ir.ui.view">
+        <field name="name">Jobs - Recruitment Form</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[2]" position="after">
+                <group>
+                    <field name="date"/>
+                    <field name="date_of_interview"/>
+                    <field name="mode_of_interview"/>
+                    <field name="experience"/>
+                    <field name="notice_period"/>
+                </group>
+            </xpath>
+        </field>
+
+    </record>
+</odoo>

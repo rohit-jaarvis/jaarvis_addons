@@ -1,38 +1,36 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "hr_jaarvis",
+    'name': "hr_exit_jaarvis",
 
-    'summary': """customize hr modules according to jaarvis needs""",
+    'summary': """
+        Short (1 phrase/line) summary of the module's purpose, used as
+        subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Customize hr module according to jaarvis needs 
-        
+        Long description of module's purpose
     """,
 
-    'author': "Rohit Kumar",
-    'website': "http://www.jaarvistech.com",
+    'author': "My Company",
+    'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'hr',
+    'category': 'Uncategorized',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr','hr_contract_salary'],
+    'depends': ['base','hr'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'data/hr_jaarvis_data.xml',
-        'views/hr_jaarvis.xml',
-'views/hr_attendance.xml',
-        'views/hr_applicant.xml',
-
+        'views/views.xml',
+        'views/templates.xml',
+        'views/report_exit_clearance_form.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-
 }
