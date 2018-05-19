@@ -26,13 +26,10 @@
         'security/ir.model.access.csv',
         'data/hr_jaarvis_data.xml',
         'views/hr_jaarvis.xml',
-'views/hr_attendance.xml',
+        'views/hr_attendance.xml',
         'views/hr_applicant.xml',
 
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+
 
 }
