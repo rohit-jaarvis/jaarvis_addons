@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <template id="report_hr_exit_releave_form_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="doc" />
+                <div class="page">
+                        <div name="releave_form" class="">
+
+                            <p>
+                                <hr/><hr/><hr/>
+                                Date
+                                <hr/><hr/><hr/>
+                                _____<hr/>
+                                _____________<hr/>
+                                <hr/><hr/>
+                                <h4>Subject : Releaving Certificate</h4>
+                                <hr/><hr/>
+                                As per your resignation on___, you are relieved from your services of _____on close of business
+                                <hr/>hours on_____.
+                                <hr/><hr/>
+                                Your final settlement and any dues (if pending) will be cleared within next 40 days.
+                                <hr/><hr/>
+                                We wish you luck for future endeavors!
+                                <hr/><hr/><hr/>
+                                _________________
+                                <hr/><hr/>
+                                ____________
+                                <hr/>
+                                _______
+                            </p>
+                        </div>
+                </div>
+
+            </t>
+        </template>
+        <template id="report_hr_exit_releaving_form">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="hr_exit_jaarvis.report_hr_exit_releave_form_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="hr_exit_releaving_form_report_tag"
+            model="hr_exit_jaarvis.hr_exit"
+            string="Releaving form"
+            report_type="qweb-html"
+            name="hr_exit_jaarvis.report_hr_exit_releaving_form"
+            file="hr_exit_jaarvis.report_hr_exit_releaving_form"
+            attachment="('ReleveForm'+(str(object.id) or '').replace('/','')+'.pdf')"
+            print_report_name="(object._get_printed_report_name())"
+        />
+
+    </data>
+</odoo>

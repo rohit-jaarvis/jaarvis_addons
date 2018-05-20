@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/report_exit_clearance_form.xml',
+        'views/report_releaving_certificate.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
