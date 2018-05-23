@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Appraisal form -->
+    <data noupdate="0">
+        <!-- Page 3 -->
+        <record model="survey.page" id="jaarvis_employee_review_survay_manager_page3">
+            <field name="title"></field>
+            <field name="survey_id" ref="jaarvis_employee_review_survay_manager" />
+            <field name="sequence">3</field>
+            <field name="description">
+                &lt;div&gt;
+                    &lt;p&gt;Give Final Rating using the following scale:&lt;/p&gt;
+
+
+                    &lt;li&gt; &lt;strong&gt;1-Does not meet Expectations/Unsatisfactory&lt;/strong&gt;&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;2-Does not meet some expectations / Needs Improvement&lt;/strong&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;3-Meets Expectations&lt;/strong&gt;&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;4-Exceeds some expectations / Excellent&lt;/strong&gt;&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;5-Substantially Exceeds Expectations / Outstanding&lt;/strong&gt;&lt;/li&gt;
+                    &lt;hr/&gt;
+                    &lt;hr/&gt;
+                    &lt;p&gt; &lt;strong class="tab"&gt;Date and Line Manager Signature                          _____________________
+                    &lt;/strong&gt;&lt;/p&gt;
+                    &lt;hr/&gt;
+                    &lt;p&gt; &lt;strong class="tab"&gt;Date and Employee Signature                          _____________________
+                    &lt;/strong&gt;&lt;/p&gt;
+
+                &lt;/div&gt;
+
+            </field>
+        </record>
+        <record model="survey.question" id="jaarvis_employee_review_survay_manager_page3_question1">
+            <field name="page_id" ref="jaarvis_employee_review_survay_manager_page3" />
+            <field name="sequence">1</field>
+            <field name="question">Final Rating</field>
+            <field name="type">numerical_box</field>
+            <field name="constr_mandatory" eval="False" />
+        </record>
+    </data>
+</odoo>
+
+

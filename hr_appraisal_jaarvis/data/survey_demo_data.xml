@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Appraisal form -->
+    <data noupdate="0">
+
+        <record model="survey.survey" id="jaarvis_employee_review_survay_manager">
+            <field name="title">Jaarvis Employee Appraisal Form</field>
+            <field name="stage_id" ref="survey.stage_permanent" />
+            <field name="auth_required" eval="True" />
+            <field name="users_can_go_back" eval="True" />
+            <field name="description">&lt;p&gt; &lt;/p&gt;</field>
+            <field name="thank_you_message">&lt;p&gt; &lt;/p&gt;</field>
+        </record>
+
+
+        <!-- Page 1 -->
+        <record model="survey.page" id="jaarvis_employee_review_survay_manager_page1">
+            <field name="title">Employee Performance Review</field>
+            <field name="survey_id" ref="jaarvis_employee_review_survay_manager" />
+            <field name="sequence">1</field>
+            <field name="description">
+                &lt;h4 class="text-center" style="background-color:black;color:white"&gt;
+                        Review GuideLines
+                &lt;/h4&gt;
+                &lt;div&gt;
+                    &lt;p&gt;Complete this peer review using the following scale:&lt;/p&gt;
+                    &lt;/hr&gt;
+
+                    &lt;li&gt; &lt;strong&gt;NA&lt;/strong&gt; = not applicable&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;1&lt;/strong&gt; =  Unsetisfactory&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;2&lt;/strong&gt; =  Marginal&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;3&lt;/strong&gt; = Meets Requirements&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;4&lt;/strong&gt; = Exceeds Requirements&lt;/li&gt;
+                    &lt;li&gt; &lt;strong&gt;5&lt;/strong&gt; = Exceptional&lt;/li&gt;
+
+                &lt;/div&gt;
+
+            </field>
+        </record>
+        <!--Question 1-->
+        <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question1">
+            <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+            <field name="sequence">1</field>
+            <field name="question">Name of the employee being Reviewed</field>
+            <field name="type">textbox</field>
+            <field name="constr_mandatory" eval="False" />
+        </record>
+        <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question2">
+            <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+            <field name="sequence">2</field>
+            <field name="question">Your Name</field>
+            <field name="type">textbox</field>
+            <field name="constr_mandatory" eval="False" />
+        </record>
+        <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question3">
+            <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+            <field name="sequence">3</field>
+            <field name="question">Date</field>
+            <field name="type">date</field>
+            <field name="constr_mandatory" eval="False" />
+        </record>
+
+        <!--review period -->
+        <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question4">
+            <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+            <field name="sequence">4</field>
+            <field name="question">Review period start date</field>
+            <field name="type">date</field>
+            <field name="constr_mandatory" eval="False" />
+        </record>
+        <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question5">
+            <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+            <field name="sequence">5</field>
+            <field name="question">Review period end date</field>
+            <field name="type">date</field>
+            <field name="constr_mandatory" eval="False" />
+        </record>
+
+        <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question6">
+            <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+            <field name="sequence">6</field>
+            <field name="question">Improving Projects</field>
+            <field name="type">matrix</field>
+            <field name="matrix_subtype">simple</field>
+            <field name="constr_mandatory" eval="False" />
+        </record>
+        <!--Question           0   0 0 0 0
+            Achived
+            Evidence
+         -->
+        <!--col of page , question ,col no-->
+                <record model="survey.label" id="acol_1_6_1">
+                    <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question6"/>
+                    <field name="sequence">1</field>
+                    <field name="value">1</field>
+                </record>
+                <record model="survey.label" id="acol_1_6_2">
+                    <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question6"/>
+                    <field name="sequence">2</field>
+                    <field name="value">2</field>
+                </record>
+                <record model="survey.label" id="acol_1_6_3">
+                    <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question6"/>
+                    <field name="sequence">3</field>
+                    <field name="value">3</field>
+                </record>
+                <record model="survey.label" id="acol_1_6_4">
+                    <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question6"/>
+                    <field name="sequence">4</field>
+                    <field name="value">4</field>
+                </record>
+                <record model="survey.label" id="acol_1_6_5">
+                    <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question6"/>
+                    <field name="sequence">5</field>
+                    <field name="value">5</field>
+                </record>
+
+                <record model="survey.label" id="arow_1_6_1">
+                    <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question6"/>
+                    <field name="sequence">1</field>
+                    <field name="value">Achived</field>
+                </record>
+                <record model="survey.label" id="arow_1_6_2">
+                    <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question6"/>
+                    <field name="sequence">2</field>
+                    <field name="value">Evidence</field>
+                </record>
+
+        <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question7">
+                <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+                <field name="sequence">7</field>
+                <field name="question">Efficient allocation of Time</field>
+                <field name="type">matrix</field>
+                <field name="matrix_subtype">simple</field>
+                <field name="constr_mandatory" eval="False" />
+            </record>
+            <!--Question           0   0 0 0 0
+                Achived
+                Evidence
+             -->
+            <!--col of page , question ,col no-->
+                    <record model="survey.label" id="acol_1_7_1">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question7"/>
+                        <field name="sequence">1</field>
+                        <field name="value">1</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_7_2">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question7"/>
+                        <field name="sequence">2</field>
+                        <field name="value">2</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_7_3">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question7"/>
+                        <field name="sequence">3</field>
+                        <field name="value">3</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_7_4">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question7"/>
+                        <field name="sequence">4</field>
+                        <field name="value">4</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_7_5">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question7"/>
+                        <field name="sequence">5</field>
+                        <field name="value">5</field>
+                    </record>
+
+                    <record model="survey.label" id="arow_1_7_1">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question7"/>
+                        <field name="sequence">1</field>
+                        <field name="value">Achieved</field>
+                    </record>
+                    <record model="survey.label" id="arow_1_7_2">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question7"/>
+                        <field name="sequence">2</field>
+                        <field name="value">Evidence</field>
+                    </record>
+
+
+            <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question8">
+                <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+                <field name="sequence">8</field>
+                <field name="question">Efficient communication with clients</field>
+                <field name="type">matrix</field>
+                <field name="matrix_subtype">simple</field>
+                <field name="constr_mandatory" eval="False" />
+            </record>
+            <!--Question           0   0 0 0 0
+                Achived
+                Evidence
+             -->
+            <!--col of page , question ,col no-->
+                        <record model="survey.label" id="acol_1_8_1">
+                            <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question8"/>
+                            <field name="sequence">1</field>
+                            <field name="value">1</field>
+                        </record>
+                        <record model="survey.label" id="acol_1_8_2">
+                            <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question8"/>
+                            <field name="sequence">2</field>
+                            <field name="value">2</field>
+                        </record>
+                        <record model="survey.label" id="acol_1_8_3">
+                            <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question8"/>
+                            <field name="sequence">3</field>
+                            <field name="value">3</field>
+                        </record>
+                        <record model="survey.label" id="acol_1_8_4">
+                            <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question8"/>
+                            <field name="sequence">4</field>
+                            <field name="value">4</field>
+                        </record>
+                        <record model="survey.label" id="acol_1_8_5">
+                            <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question8"/>
+                            <field name="sequence">5</field>
+                            <field name="value">5</field>
+                        </record>
+
+                        <record model="survey.label" id="arow_1_8_1">
+                            <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question8"/>
+                            <field name="sequence">1</field>
+                            <field name="value">Achieved</field>
+                        </record>
+                        <record model="survey.label" id="arow_1_8_2">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question8"/>
+                        <field name="sequence">2</field>
+                        <field name="value">Evidence</field>
+                    </record>
+
+            <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question9">
+                <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+                <field name="sequence">9</field>
+                <field name="question">Handling Every Task From Starting Till End</field>
+                <field name="type">matrix</field>
+                <field name="matrix_subtype">simple</field>
+                <field name="constr_mandatory" eval="False" />
+            </record>
+            <!--Question           0   0 0 0 0
+                Achived
+                Evidence
+             -->
+            <!--col of page , question ,col no-->
+                    <record model="survey.label" id="acol_1_9_1">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question9"/>
+                        <field name="sequence">1</field>
+                        <field name="value">1</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_9_2">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question9"/>
+                        <field name="sequence">2</field>
+                        <field name="value">2</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_9_3">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question9"/>
+                        <field name="sequence">3</field>
+                        <field name="value">3</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_9_4">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question9"/>
+                        <field name="sequence">4</field>
+                        <field name="value">4</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_9_5">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question9"/>
+                        <field name="sequence">5</field>
+                        <field name="value">5</field>
+                    </record>
+
+                    <record model="survey.label" id="arow_1_9_1">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question9"/>
+                        <field name="sequence">1</field>
+                        <field name="value">Achieved</field>
+                    </record>
+                    <record model="survey.label" id="arow_1_9_2">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question9"/>
+                        <field name="sequence">2</field>
+                        <field name="value">Evidence</field>
+                    </record>
+
+
+            <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question10">
+                <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+                <field name="sequence">10</field>
+                <field name="question">Mantaining Task Description</field>
+                <field name="type">matrix</field>
+                <field name="matrix_subtype">simple</field>
+                <field name="constr_mandatory" eval="False" />
+            </record>
+            <!--Question           0   0 0 0 0
+                Achived
+                Evidence
+             -->
+            <!--col of page , question ,col no-->
+                    <record model="survey.label" id="acol_1_10_1">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question10"/>
+                        <field name="sequence">1</field>
+                        <field name="value">1</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_10_2">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question10"/>
+                        <field name="sequence">2</field>
+                        <field name="value">2</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_10_3">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question10"/>
+                        <field name="sequence">3</field>
+                        <field name="value">3</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_10_4">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question10"/>
+                        <field name="sequence">4</field>
+                        <field name="value">4</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_10_5">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question10"/>
+                        <field name="sequence">5</field>
+                        <field name="value">5</field>
+                    </record>
+
+                    <record model="survey.label" id="arow_1_10_1">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question10"/>
+                        <field name="sequence">1</field>
+                        <field name="value">Achieved</field>
+                    </record>
+                    <record model="survey.label" id="arow_1_10_2">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question10"/>
+                        <field name="sequence">2</field>
+                        <field name="value">Evidence</field>
+                    </record>
+
+
+
+            <record model="survey.question" id="jaarvis_employee_review_survay_manager_page1_question11">
+                <field name="page_id" ref="jaarvis_employee_review_survay_manager_page1" />
+                <field name="sequence">11</field>
+                <field name="question">Mantaining Task Plan</field>
+                <field name="type">matrix</field>
+                <field name="matrix_subtype">simple</field>
+                <field name="constr_mandatory" eval="False" />
+            </record>
+            <!--Question           0   0 0 0 0
+                Achived
+                Evidence
+             -->
+            <!--col of page , question ,col no-->
+                    <record model="survey.label" id="acol_1_11_1">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question11"/>
+                        <field name="sequence">1</field>
+                        <field name="value">1</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_11_2">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question11"/>
+                        <field name="sequence">2</field>
+                        <field name="value">2</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_11_3">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question11"/>
+                        <field name="sequence">3</field>
+                        <field name="value">3</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_11_4">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question11"/>
+                        <field name="sequence">4</field>
+                        <field name="value">4</field>
+                    </record>
+                    <record model="survey.label" id="acol_1_11_5">
+                        <field name="question_id" ref="jaarvis_employee_review_survay_manager_page1_question11"/>
+                        <field name="sequence">5</field>
+                        <field name="value">5</field>
+                    </record>
+
+                    <record model="survey.label" id="arow_1_11_1">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question11"/>
+                        <field name="sequence">1</field>
+                        <field name="value">Achieved</field>
+                    </record>
+                    <record model="survey.label" id="arow_1_11_2">
+                        <field name="question_id_2" ref="jaarvis_employee_review_survay_manager_page1_question11"/>
+                        <field name="sequence">2</field>
+                        <field name="value">Evidence</field>
+                    </record>
+
+
+        <!--page 1 ends-->
+
+        <!--page 2 starts in jaarvis_review_psurvay_page2.xml-->
+
+    </data>
+</odoo>
+
+
